@@ -164,7 +164,7 @@ inline void TA2UserAnalysis::EndFile()
 
 inline void TA2UserAnalysis::Finish()
 {
-  if(IsEndOfFile()) EndFile();
+  //  if(IsEndOfFile()) EndFile();
   if(fPhysics) fPhysics->Finish();
   TA2Analysis::Finish();
   fFileDone = true;

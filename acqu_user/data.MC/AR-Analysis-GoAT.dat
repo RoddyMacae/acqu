@@ -10,9 +10,9 @@ Reconstruct:
 # CaLib configuration, off for MC
 #
 
-#RootTree-Output-Folder:		~
-RootTree-Input-Name:		A2G4
-RootTree-File-Name:		Acqu
+RootTree-Output-Folder:		~/acqu/acqu_user/
+RootTree-Input-Name:		A2G4_PPi0_5M.root
+RootTree-File-Name:		Acqu_A2G4_PPi0_5M.root
 
 # Optional argument to include tagged photon energies in the tagger tree
 # GoAT currently handles this with an included histogram, reducing file size

@@ -23,13 +23,11 @@ void EndFileMacro()
   //Cut file extension (.dat or .rd0)
   ptr = strrchr(filename, '.');
   *ptr = '\0';
-  //Get name of physics class
-  //  strcpy(physname, gUAN->GetPhysics()->GetName());
   //Build histograms filename from physics and datafile
-  sprintf(savename, "/scratch/roddym/%s.out.root", filename);
+  sprintf(savename, "/scratch/roddym/tmp/%s.out.root", filename);
   //Save histograms
   gUAN->SaveAll(savename);
-  gUAN->ZeroAll();
-  //printf("All histograms saved to %s and zero'ed\n", savename);
-  printf("All histograms saved to %s\n", savename);
+  //  gUAN->ZeroAll();  When Running on Farm, must be taken out as macro runs twice, deleting histograms and saving zero events (Due to problem in src code).
+  //printf("All histograms saved to %s and zeroed\n", savename);
+  //printf("All histograms saved to %s\n", savename);
 }
