@@ -10,7 +10,7 @@ export DataFile=$file'.dat.xz'
 export Outfile=$file'.out.root'
 echo $DataFile
 echo $Outfile
-qsub /home/roddym/acqu/Scripts/runJob.bash
+qsub /home/roddym/Documents/acqu/Scripts/runJob.bash
 sleep $sleeptime
 done
 
