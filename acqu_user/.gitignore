@@ -17,3 +17,12 @@
 
 #Farm job files
 /jobs
+
+#Root files
+*.root
+
+# pdf files
+*.pdf
+
+#Worker threads
+*Thread*
