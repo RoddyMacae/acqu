@@ -26,10 +26,14 @@ void EndFileMacro()
   //Get name of physics class
   //  strcpy(physname, gUAN->GetPhysics()->GetName());
   //Build histograms filename from physics and datafile
-  sprintf(savename, "/scratch/roddym/%s.out.root", filename);
+  //  sprintf(savename, "/scratch/roddym/%s.out.root", filename);
+  //  sprintf(savename, "~/Documents/TagEff/%s.out.root", filename);
+  sprintf(savename, "/w/work14/roddym/TaggEff/%s.out.root", filename);
+  //sprintf(savename, "home/roddym/Documents/acqu/acqu_user/%s.out.root", filename);  // Use for creating new, initial, ladder files.
+
   //Save histograms
   gUAN->SaveAll(savename);
   gUAN->ZeroAll();
-  //printf("All histograms saved to %s and zero'ed\n", savename);
-  printf("All histograms saved to %s\n", savename);
+  printf("All histograms saved to %s and zero'ed\n", savename);
+  //printf("All histograms saved to %s\n", savename);
 }

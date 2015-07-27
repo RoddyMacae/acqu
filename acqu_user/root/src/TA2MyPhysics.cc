@@ -234,6 +234,13 @@ void TA2MyPhysics::SetConfig(Char_t* line, Int_t key)
         case EMP_CALIB_BADSCR:
         {
             // declare sscanf helpers (max. 16 data names)
+
+            fUseBadScalerReads = kTRUE;
+	    fNBadScalerReads = 1;
+	    fBadScalerReads = new Int_t [1];
+	    fBadScalerReads[0] = 0;
+	    /*
+
             Int_t list;
             Int_t first;
             Int_t last;
@@ -246,6 +253,10 @@ void TA2MyPhysics::SetConfig(Char_t* line, Int_t key)
 
             // check whether CaLib reader exists
             if (fCaLibReader)
+
+            // read CaLib BadScR parameters 
+	        if (sscanf(line, "%d%d%d", &list, &first, &last) == 3)
+
             {
                 // set flags
                 fCaLibReader->SetBadScRlist((Bool_t) list);
@@ -275,6 +286,11 @@ void TA2MyPhysics::SetConfig(Char_t* line, Int_t key)
             // clean up
             for (Int_t i = 0; i < 16; i++) delete d[i];
             break;
+
+            }                
+            else Error("SetConfig", "CaLib PID calibration could not be configured!");
+            break;*/
+
         }
         case EMP_RUN_NUMBER:
         {   
